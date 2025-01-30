@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueFlame Gas Services | Book Your Cylinder</title>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>BlueFlame Gas Services</h1>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="form.html">Services</a></li>
+            <li><a href="admin.html">Admin Login</a></li>
+            <li><a href="login.html">User Login</a></li>
+        </ul>
+    </div>
+
+    <div class="form-container">
+        <h2>Book Your Cylinder</h2>
+        <form id="bookingForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Enter your address" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Enter your phone number" required>
+
+            <label for="cylinderType">Cylinder Type</label>
+            <select id="cylinderType">
+                <option value="domestic">Domestic</option>
+                <option value="commercial">Commercial</option>
+            </select>
+
+            <label for="paymentOption">Payment Option</label>
+            <select id="paymentOption">
+                <option value="cash">Cash on Delivery</option>
+                <option value="upi">UPI</option>
+                <option value="paytm">Paytm QR Code</option>
+            </select>
+
+            <!-- UPI Field -->
+            <div id="upiField" style="display: none;">
+                <label for="upiInput">Enter UPI ID</label>
+                <input type="text" id="upiInput" placeholder="Enter your UPI ID">
+            </div>
+
+            <!-- QR Code Field -->
+            <div id="qrContainer" style="display: none;">
+                <p>Scan the Paytm QR code to complete the payment:</p>
+                <img src="paytm.png" alt="Paytm QR Code" style="width: 150px;">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BlueFlame Gas Services. All Rights Reserved.</p>
+        <p>Contact us: <a href="mailto:support@blueflame.com">support@blueflame.com</a> | Phone: +1 (555) 123-4567</p>
+        <p>Follow us: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Twitter</a> | 
+            <a href="#">Instagram</a>
+        </p>
+    </footer>
+
+
+    <script type="module" src="form.js"></script>
+
+
+
+</body>
+</html>

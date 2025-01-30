@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | BlueFlame Gas Services</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script type="module">
+        // Import Firebase functions
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+        import { getDatabase, ref, get, update } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-database.js";
+
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyAsv_VcwGsRgFoAhVynBZqFXR8Ets1cQQs",
+            authDomain: "new-firebase-project-1.firebaseapp.com",
+            databaseURL: "https://new-firebase-project-1-default-rtdb.firebaseio.com",
+            projectId: "new-firebase-project-1",
+            storageBucket: "new-firebase-project-1.firebasestorage.app",
+            messagingSenderId: "787055583067",
+            appId: "1:787055583067:web:288e11bebaaec2dc58047e",
+            measurementId: "G-VYV8E2PMKD"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const database = getDatabase(app);
+
+        // Fetch and display data
+        document.addEventListener("DOMContentLoaded", function () {
+            const fetchDataBtn = document.getElementById("fetchData");
+            const bookingsTable = document.getElementById("bookingsTableBody");
+
+            fetchDataBtn.addEventListener("click", function () {
+                const bookingsRef = ref(database, "users");
+                get(bookingsRef).then((snapshot) => {
+                    if (snapshot.exists()) {
+                        bookingsTable.innerHTML = ""; // Clear table before appending new data
+                        const data = snapshot.val();
+                        Object.keys(data).forEach((key) => {
+                            const booking = data[key];
+                            const row = `
+                                <tr>
+                                    <td>${booking.name}</td>
+                                    <td>${booking.address}</td>
+                                    <td>${booking.phone}</td>
+                                    <td>${booking.cylinderType}</td>
+                                    <td>${booking.paymentOption}</td>
+                                    <td>${booking.bookedAt}</td>
+                                    <td>
+                                        <input type="checkbox" class="approve-checkbox" data-id="${key}">
+                                    </td>
+                                </tr>
+                            `;
+                            bookingsTable.insertAdjacentHTML("beforeend", row);
+                        });
+                    } else {
+                        alert("No data found!");
+                    }
+                }).catch((error) => {
+                    console.error("Error fetching data:", error.message);
+                });
+            });
+
+            // Approve bookings
+            // Approve bookings
+document.getElementById("approveBookings").addEventListener("click", function () {
+    const checkboxes = document.querySelectorAll(".approve-checkbox:checked");
+    if (checkboxes.length === 0) {
+        alert("No bookings selected for approval.");
+        return;
+    }
+
+    checkboxes.forEach((checkbox) => {
+        const bookingId = checkbox.getAttribute("data-id");
+        const bookingRef = ref(database, `users/${bookingId}`);
+
+        // Update the booking in Firebase
+        update(bookingRef, { status: "Approved" })
+            .then(() => {
+                // Update the table row UI
+                const row = checkbox.closest("tr");
+                const approveCell = row.querySelector("td:last-child");
+                approveCell.innerHTML = "Approved"; // Replace checkbox with "Approved"
+
+                alert(`Booking with ID: ${bookingId} has been approved.`);
+            })
+            .catch((error) => {
+                console.error("Error approving booking:", error.message);
+            });
+    });
+});
+
+        });
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Dashboard | BlueFlame Gas Services</h1>
+        <ul>
+            <li><a href="Home.html">Home</a></li>
+            <li><a href="form.html">Booking Form</a></li>
+        </ul>
+    </div>
+
+    <div class="dashboard-container">
+        <h2>Bookings Management</h2>
+        <button id="fetchData">Fetch Data</button>
+        <button id="approveBookings">Approve Selected Bookings</button>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>Phone</th>
+                    <th>Cylinder Type</th>
+                    <th>Payment Option</th>
+                    <th>Booked At</th>
+                    <th>Approve</th>
+                </tr>
+            </thead>
+            <tbody id="bookingsTableBody">
+                <!-- Dynamic content will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 BlueFlame Gas Services. All Rights Reserved.</p>
+        <p>Contact us: <a href="mailto:support@blueflame.com">support@blueflame.com</a> | Phone: +1 (555) 123-4567</p>
+    </footer>
+</body>
+</html>

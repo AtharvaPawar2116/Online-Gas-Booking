@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueFlame Gas Services | Your Trusted Gas Provider</title>
+    <meta name="description" content="BlueFlame Gas Services ensures a seamless gas cylinder booking experience with a focus on safety, reliability, and customer satisfaction. Learn more about our services and offers.">
+    <meta name="keywords" content="Gas Services, Gas Cylinder Booking, BlueFlame, Customer Satisfaction, Reliable Gas Service">
+    <link rel="stylesheet" href="Home.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(to bottom right, #004d80, #e6f7ff); /* Gradient Background */
+            color: #333; /* Dark Gray */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.9);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar h1 {
+            font-size: 1.8rem;
+            color: #004d80;
+            text-transform: uppercase;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #004d80;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            background-color: #004d80;
+            color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-container {
+            width: 100%;
+            height: 60vh;
+            overflow: hidden;
+            position: relative;
+            display: flex;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .about-us {
+            padding: 40px 20px;
+            background-color: #ffffff;
+            text-align: center;
+            color: #004d80;
+        }
+
+        .about-us h2 {
+            margin-bottom: 20px;
+        }
+
+        .about-us p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        footer {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e6f7ff;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 5px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .image-container {
+                height: 75vh;
+            }
+
+            .about-us {
+                padding: 60px 20px;
+            }
+
+            .about-us h2 {
+                font-size: 2.5rem;
+            }
+
+            .about-us p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="navbar">
+    <h1>BlueFlame Gas Services</h1>
+    <ul>
+        <li><a href="#Home">Home</a></li>
+        <li><a href="form.html">Services</a></li>
+        <li><a href="admin.html">Admin Login</a></li>
+        <li><a href="login.html">User Login</a></li>
+    </ul>
+</div>
+
+<div class="image-container" id="imageContainer">
+    <img src="Screenshot 2025-01-14 113856.png" style="width: 100%vw; heigth:500px;" alt="Image 1" class="slider-image" style="transform: translateX(0);">
+    <img src="Screenshot 2025-01-14 184959.png" alt="Image 2" class="slider-image" style="transform: translateX(100%);">
+    <img src="Screenshot 2025-01-14 185623.png" alt="Image2" class="slider-image" style="transform: translateX(200%);">
+</div>
+
+<div class="about-us">
+    <h2>About Us</h2>
+    <p>
+        Welcome to BlueFlame Gas Services! We are committed to ensuring a seamless gas cylinder booking experience. 
+        Our priority is to deliver safety, reliability, and customer satisfaction. 
+        With a focus on innovative solutions, we aim to make your gas booking process more convenient and secure. 
+        Our team is dedicated to providing top-notch customer support and timely delivery services. 
+        At BlueFlame Gas Services, we prioritize safety measures and adhere to industry standards. 
+        Join our family of satisfied customers and experience the difference. 
+        We continuously strive to improve our services based on your valuable feedback. 
+        For over a decade, we have been serving our community with excellence. 
+        Explore our website to learn more about our offerings and special deals. 
+        Let us be your trusted partner in gas services. Together, we can build a safer and more efficient future.
+    </p>
+</div>
+
+<footer>
+    <p>&copy; 2025 BlueFlame Gas Services. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:support@blueflame.com">support@blueflame.com</a> | Phone: +1 (555) 123-4567</p>
+    <p>Follow us: 
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a> | 
+        <a href="#">Instagram</a>
+    </p>
+</footer>
+
+<script>
+    const images = document.querySelectorAll('.slider-image');
+    let currentIndex = 0;
+
+    function slideImages() {
+        images.forEach((img, index) => {
+            img.style.transform = `translateX(${(index - currentIndex) * 100}%)`;
+        });
+    }
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        slideImages();
+    }
+
+    setInterval(nextImage, 3000); // Slide every 3 seconds
+
+    slideImages();
+</script>
+
+</body>
+</html>

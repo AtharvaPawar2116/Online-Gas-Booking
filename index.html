@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gas Agency Landing Page</title>
+    <style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom right, #004d80, #e6f7ff); 
+    color: #333; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); 
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+}
+
+.container img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.container h1 {
+    font-size: 2.5rem;
+    color: #004d80; 
+    margin-bottom: 20px;
+}
+
+.container p {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #004d80; 
+    color: #fff; 
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #003653; 
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    background-color: rgba(0, 77, 128, 0.3); 
+    animation: float 6s infinite;
+}
+
+.circle.one {
+    width: 120px;
+    height: 120px;
+    top: 15%;
+    left: 10%;
+}
+
+.circle.two {
+    width: 180px;
+    height: 180px;
+    bottom: 15%;
+    right: 10%;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Decorative Floating Circles -->
+        <div class="circle one"></div>
+        <div class="circle two"></div>
+
+        <!-- Placeholder for Image -->
+        <img src="Screenshot 2025-01-14 113856.png" alt="Gas Agency Image" />
+
+        <h1>Welcome To  <br>BlueFlame Gas Services </h1>
+        <p>Your trusted partner for safe and reliable gas cylinder bookings.</p>
+        <button class="btn" onclick="window.location.href='Home.html';">Get Started</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlueFlame Gas Services | User Portal</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h1>BlueFlame Gas Services</h1>
+    <ul>
+        <li><a href="home.html">Home</a></li>
+        <li><a href="form.html">Services</a></li>
+        <li><a href="login.html">User Login</a></li>
+        <li><a href="admin.html">Admin Login</a></li>
+    </ul>
+</div>
+
+<!-- Login Form -->
+<div class="form-container" id="login-section">
+    <h2>User Login</h2>
+    <form id="loginForm">
+        <label for="login-email">Email</label>
+        <input type="email" id="login-email" placeholder="Enter your email" required>
+
+        <label for="login-password">Password</label>
+        <input type="password" id="login-password" placeholder="Enter your password" required>
+
+        <button type="submit">Login</button>
+
+        <div class="register-link">
+            <p>First time here? <a href="#register-section">Register</a></p>
+        </div>
+    </form>
+</div>
+
+<!-- Registration Form -->
+<div class="form-container" id="register-section">
+    <h2>User Registration</h2>
+    <form id="registerForm">
+        <label for="register-email">Email</label>
+        <input type="email" id="register-email" placeholder="Enter your email" required>
+
+        <label for="register-password">Password</label>
+        <input type="password" id="register-password" placeholder="Create a password" required>
+
+        <label for="register-confirm-password">Confirm Password</label>
+        <input type="password" id="register-confirm-password" placeholder="Confirm your password" required>
+
+        <button type="submit">Register</button>
+    </form>
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2025 BlueFlame Gas Services. All Rights Reserved.</p>
+    <p>Contact us: <a href="mailto:support@blueflame.com">support@blueflame.com</a> | Phone: +1 (555) 123-4567</p>
+    <p>Follow us: 
+        <a href="#">Facebook</a> | 
+        <a href="#">Twitter</a> | 
+        <a href="#">Instagram</a>
+    </p>
+</footer>
+
+
+
+<script type="module" src="userlogin.js"></script>
+
+</body>
+</html>
